@@ -1,0 +1,25 @@
+<% include partials/header.ejs %>
+<script>
+    var password = prompt("Please enter the admin code here:");
+    if (password !== "hack4impact") {
+        window.location.href = "/";
+    }
+</script>
+<body>
+    <h1>Applications:</h1>
+    <div class="container">
+        <div class="row justify-content-around">
+            <% apps.forEach( function (app) { %>
+            <div class="col colsm-6 col-md-3">
+                <p> name: <%= app.firstName %> <%= app.lastName %> <br>
+                    email: <%= app.email %> <br>
+                    grade: <%= app.grade %> <br>
+                    major: <%= app.major %> <br>
+                    skills: <%= app.skills %> <br>
+                    reason: <%= app.reason %>
+                </p>
+            </div>
+            <% });%>
+        </div>
+    </div>
+<% include partials/footer.ejs %>
